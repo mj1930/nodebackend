@@ -5,18 +5,22 @@ const Booking = require('./models/booking.js');
 module.exports.saveBooking = function(req, res) {
     let outputJson = {};
     let seats = req.body.nOfPassengers[0];
-    booking = req.body.body.booking;
+    booking = req.body.booking;
+    console.log(booking, seats)
     async.eachSeries(booking, (bookingVal, callback)=> {
         Booking.find().count((err, response) => {
             if (!err) {
-                bookingVal.seat = response + 1;
                 if (response > 77 && seats > 3) {
                     callback("can't book seats", null);
                 }
                 else
                 {
-                    Booking(bookingVal).save(
-                        bookingVal
+                    let obj = {
+                        seat: bookingVal,
+                        reserved: true
+                    }
+                    Booking(obj).save(
+                        obj
                     , (err, resp) => {
                         if (err) {
                             callback(err, null);

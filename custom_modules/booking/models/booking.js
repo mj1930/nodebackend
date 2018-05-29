@@ -3,13 +3,19 @@ var Schema = mongoose.Schema;
 
 const Booking = mongoose.Schema({
    name: {
-    type: 'String'
+    type: String,
+    default: ""
    },
    age: {
-       type: 'String'
+       type: String,
+       default: ""
    },
    seat: {
-    type: 'Number'
+    type: Number
+   },
+   reserved: {
+    type: Boolean,
+    default: false
    }
 });
 
