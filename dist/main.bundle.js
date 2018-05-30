@@ -391,6 +391,7 @@ var DisplaySeatsComponent = (function () {
         this.activatedRoute.params.subscribe(function (params) {
             _this.nOfTickets = params.tickets;
         });
+        this.leftSeat = this.nOfTickets;
         this.bookedTickets = JSON.parse(localStorage.getItem('tickets'));
     };
     DisplaySeatsComponent.prototype.checkStatus = function (ticket) {
@@ -424,6 +425,7 @@ var DisplaySeatsComponent = (function () {
                     for (var i = 0; i <= this.reservedTicket.length; i++) {
                         $("#" + this.reservedTicket[i]).prop('checked', false);
                     }
+                    this.leftSeat = this.nOfTickets;
                     this.reservedTicket = [];
                     this.checkSeat(event);
                 }
@@ -441,14 +443,16 @@ var DisplaySeatsComponent = (function () {
         var val = $('#' + nextCheck + ':checked').length;
         if (val > 0 && totalSeat >= 2) {
             alert('Please select seats 1 by 1');
+            this.leftSeat = totalSeat - 1;
             this.reserveSeat(event);
         }
         else {
             this.reservedTicket.push(id);
-            for (var i = 0; i <= totalSeat - 2; i++) {
+            for (var i = 0; i < this.leftSeat; i++) {
                 $("#" + nextCheck).prop('checked', checked);
                 this.reservedTicket.push(nextCheck);
                 nextCheck += 1;
+                this.leftSeat -= 1;
             }
         }
     };
@@ -460,6 +464,7 @@ var DisplaySeatsComponent = (function () {
     };
     DisplaySeatsComponent.prototype.onClick = function () {
         var _this = this;
+        // console.log(this.reservedTicket)
         this.book = this.serviceBook.addNewBooking(this.reservedTicket, this.nOfTickets).then(function (res) {
             if (res.status == 200) {
                 _this.flashMsgService.show(res.msg, {
