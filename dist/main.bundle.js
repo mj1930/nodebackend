@@ -109,7 +109,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* routing */], __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */], __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_8_ngx_flash_messages__["a" /* FlashMessagesModule */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* routing */], __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* ReactiveFormsModule */], __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_8_ngx_flash_messages__["a" /* FlashMessagesModule */]],
             declarations: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_6__booking_booking_component__["a" /* BookingComponent */], __WEBPACK_IMPORTED_MODULE_7__display_seats_display_seats_component__["a" /* DisplaySeatsComponent */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]],
             providers: [{
@@ -183,11 +183,10 @@ module.exports = "<div class = \"container\">\n  <h1>Book your tickets</h1>\n  <
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BookingComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__booking_service__ = __webpack_require__("../../../../../src/app/booking/booking.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__display_seats_display_seats_service__ = __webpack_require__("../../../../../src/app/display-seats/display-seats.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_flash_messages__ = __webpack_require__("../../../../ngx-flash-messages/lib-dist/flash-messages.module.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__booking_service__ = __webpack_require__("../../../../../src/app/booking/booking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__display_seats_display_seats_service__ = __webpack_require__("../../../../../src/app/display-seats/display-seats.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_flash_messages__ = __webpack_require__("../../../../ngx-flash-messages/lib-dist/flash-messages.module.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -202,10 +201,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var BookingComponent = (function () {
-    function BookingComponent(formBuilder, service, _router, getService, flashMsgService) {
-        this.formBuilder = formBuilder;
+    function BookingComponent(service, _router, getService, flashMsgService) {
         this.service = service;
         this._router = _router;
         this.getService = getService;
@@ -260,13 +257,12 @@ var BookingComponent = (function () {
             selector: 'app-booking',
             template: __webpack_require__("../../../../../src/app/booking/booking.component.html"),
             styles: [__webpack_require__("../../../../../src/app/booking/booking.component.css")],
-            providers: [__WEBPACK_IMPORTED_MODULE_2__booking_service__["a" /* BookingService */], __WEBPACK_IMPORTED_MODULE_4__display_seats_display_seats_service__["a" /* DisplaySeatsService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_1__booking_service__["a" /* BookingService */], __WEBPACK_IMPORTED_MODULE_3__display_seats_display_seats_service__["a" /* DisplaySeatsService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_2__booking_service__["a" /* BookingService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_4__display_seats_display_seats_service__["a" /* DisplaySeatsService */],
-            __WEBPACK_IMPORTED_MODULE_5_ngx_flash_messages__["b" /* FlashMessagesService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__booking_service__["a" /* BookingService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__display_seats_display_seats_service__["a" /* DisplaySeatsService */],
+            __WEBPACK_IMPORTED_MODULE_4_ngx_flash_messages__["b" /* FlashMessagesService */]])
     ], BookingComponent);
     return BookingComponent;
 }());
@@ -330,7 +326,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".top {\n    font-size: 20px;\n    margin-bottom: 10px;\n    margin-top: 5px;\n}\n.form-check-input:disabled~.form-check-label {\n    color: rgba(0, 0, 0, 0.9);\n}\ninput:disabled, textarea:disabled {\n    color: rgba(0, 0, 0, 0.9);\n    cursor: default;\n}\na {\n    color: #007bff !important;\n    text-decoration: none;\n    background-color: transparent;\n    -webkit-text-decoration-skip: objects;\n}\n.wide {\n    width: 20%;\n}", ""]);
+exports.push([module.i, ".top {\n    font-size: 20px;\n    margin-bottom: 10px;\n    margin-top: 5px;\n}\n.form-check-input:disabled~.form-check-label {\n    color: rgba(0, 0, 0, 0.9);\n}\n.box-length {\n    width: 14.285714285714285714285714285714%;\n    float: left;\n}\ninput:disabled, textarea:disabled {\n    color: rgba(0, 0, 0, 0.9);\n    cursor: default;\n}\na {\n    color: #007bff !important;\n    text-decoration: none;\n    background-color: transparent;\n    -webkit-text-decoration-skip: objects;\n}\n.wide {\n    width: 20%;\n}\n.box {\n    border: 1px solid #ddd;\n    width: 30px;\n    height: 30px;\n    margin: 0.2rem;\n    text-align: center;\n    background:#0d72de!important;\n}\n.reserve{ \n    background:#101010!important;\n}", ""]);
 
 // exports
 
@@ -343,7 +339,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/display-seats/display-seats.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">  \n  <div class=\"row\">\n    <ngx-flash-messages></ngx-flash-messages>\n    <div class=\"col-sm-12 top\">\n      <a [routerLink]=\"['/']\">\n        <i class=\"fa fa-dashboard\"></i> Book A Ticket\n      </a>\n    </div>    \n    <div class=\"col-sm-12\" *ngIf=\"nOfTickets > 0\">\n      <h3>Select your {{nOfTickets}} ticket.</h3>\n    </div>\n    <div class=\"col-sm-2\" *ngFor=\"let ticket of totalTicket(80); let i='index+1';\">\n      <div class=\"form-check\">\n        <ng-container [ngTemplateOutlet]='checkStatus(ticket) ? oddTemplate : newTemplate' [ngTemplateOutletContext]=\"{number:i}\">\n        </ng-container>\n      </div>\n    </div>\n    <div class=\"col-sm-12\">\n      <button type=\"submit\" (click)=\"onClick()\" class=\"wide btn btn-primary btn-block btn-flat\" value=\"\">Book Ticket</button>\n    </div>\n  </div>\n</div>\n<ng-template #newTemplate let-i='number'>\n    <input class=\"form-check-input\" [id]=\"i\" (change)=\"onCheck($event)\" type=\"checkbox\">\n    <label class=\"form-check-label text-dark\">\n      Unreserved\n    </label>\n</ng-template>\n<ng-template #oddTemplate let-i='number' let-bookedTickets='bookedTickets'>\n    <input class=\"form-check-input\" [id]=\"i\" type=\"checkbox\" disabled=\"reserved\" checked=\"reserved\">\n    <label class=\"form-check-label text-success\">\n      Reserved\n    </label>\n</ng-template>"
+module.exports = "<div class=\"container\">  \n  <div class=\"row\">\n    <ngx-flash-messages></ngx-flash-messages>\n    <div class=\"col-sm-12 top\">\n      <a [routerLink]=\"['/']\">\n        <i class=\"fa fa-dashboard\"></i> Book A Ticket\n      </a>\n    </div>    \n    <div class=\"col-sm-12\" *ngIf=\"nOfTickets > 0\">\n      <h3>Select your {{nOfTickets}} ticket.</h3>\n    </div>\n    <div class=\"box-length\" *ngFor=\"let ticket of totalTicket(80); let i='index+1';\">\n      <div class=\"form-check\">\n        <ng-container [ngTemplateOutlet]='checkStatus(ticket) ? oddTemplate : newTemplate' [ngTemplateOutletContext]=\"{number:i}\">\n        </ng-container>\n      </div>\n    </div>\n    <div class=\"col-sm-12\">\n      <button type=\"submit\" (click)=\"onClick()\" class=\"wide btn btn-primary btn-block btn-flat\" value=\"\">Book Ticket</button>\n    </div>\n  </div>\n</div>\n<ng-template #newTemplate let-i='number'>\n    <input class=\"form-check-input\" [id]=\"i\" (change)=\"onCheck($event)\" type=\"checkbox\">\n    <label class=\"form-check-label box text-warning\">{{i}}</label>\n</ng-template>\n<ng-template #oddTemplate let-i='number' let-bookedTickets='bookedTickets'>\n    <input class=\"form-check-input\" [id]=\"i\" type=\"checkbox\" disabled=\"reserved\" checked=\"reserved\">\n    <label class=\"form-check-label reserve box text-success\">{{i}}\n    </label>\n</ng-template>"
 
 /***/ }),
 
@@ -353,10 +349,11 @@ module.exports = "<div class=\"container\">  \n  <div class=\"row\">\n    <ngx-f
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DisplaySeatsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__display_seats_service__ = __webpack_require__("../../../../../src/app/display-seats/display-seats.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_flash_messages__ = __webpack_require__("../../../../ngx-flash-messages/lib-dist/flash-messages.module.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__booking_booking_service__ = __webpack_require__("../../../../../src/app/booking/booking.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__display_seats_service__ = __webpack_require__("../../../../../src/app/display-seats/display-seats.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_flash_messages__ = __webpack_require__("../../../../ngx-flash-messages/lib-dist/flash-messages.module.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__booking_booking_service__ = __webpack_require__("../../../../../src/app/booking/booking.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -371,8 +368,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DisplaySeatsComponent = (function () {
-    function DisplaySeatsComponent(service, serviceBook, router, cd, activatedRoute, flashMsgService) {
+    function DisplaySeatsComponent(formBuilder, service, serviceBook, router, cd, activatedRoute, flashMsgService) {
+        this.formBuilder = formBuilder;
         this.service = service;
         this.serviceBook = serviceBook;
         this.router = router;
@@ -382,9 +381,13 @@ var DisplaySeatsComponent = (function () {
         this.bookedTickets = [];
         this.reservedTicket = [];
         this.status = false;
+        this.emailFormArray = [];
     }
     DisplaySeatsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.checkBoxArray = this.formBuilder.group({
+            checkBox: this.formBuilder.array([])
+        });
         this.activatedRoute.params.subscribe(function (params) {
             _this.nOfTickets = params.tickets;
         });
@@ -413,12 +416,17 @@ var DisplaySeatsComponent = (function () {
             this.router.navigate(['/']);
         }
         else {
-            if (this.reservedTicket.length > 0) {
-                for (var i = 0; i <= this.reservedTicket.length; i++) {
-                    $("#" + this.reservedTicket[i]).prop('checked', false);
+            if (this.reservedTicket) {
+                if (this.reservedTicket.length < this.nOfTickets) {
+                    this.checkSeat(event);
                 }
-                this.reservedTicket = [];
-                this.checkSeat(event);
+                else {
+                    for (var i = 0; i <= this.reservedTicket.length; i++) {
+                        $("#" + this.reservedTicket[i]).prop('checked', false);
+                    }
+                    this.reservedTicket = [];
+                    this.checkSeat(event);
+                }
             }
             else {
                 this.checkSeat(event);
@@ -446,8 +454,9 @@ var DisplaySeatsComponent = (function () {
     };
     DisplaySeatsComponent.prototype.reserveSeat = function (event) {
         var id = +event.target.id;
-        this.reservedTicket.push(id);
-        console.log(this.reservedTicket);
+        var emailForm = this.checkBoxArray.controls.checkBox;
+        emailForm.push(new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */](id));
+        this.reservedTicket = emailForm.value;
     };
     DisplaySeatsComponent.prototype.onClick = function () {
         var _this = this;
@@ -468,14 +477,15 @@ var DisplaySeatsComponent = (function () {
             selector: 'app-display-seats',
             template: __webpack_require__("../../../../../src/app/display-seats/display-seats.component.html"),
             styles: [__webpack_require__("../../../../../src/app/display-seats/display-seats.component.css")],
-            providers: [__WEBPACK_IMPORTED_MODULE_1__display_seats_service__["a" /* DisplaySeatsService */], __WEBPACK_IMPORTED_MODULE_3__booking_booking_service__["a" /* BookingService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__display_seats_service__["a" /* DisplaySeatsService */], __WEBPACK_IMPORTED_MODULE_4__booking_booking_service__["a" /* BookingService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__display_seats_service__["a" /* DisplaySeatsService */],
-            __WEBPACK_IMPORTED_MODULE_3__booking_booking_service__["a" /* BookingService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_2__display_seats_service__["a" /* DisplaySeatsService */],
+            __WEBPACK_IMPORTED_MODULE_4__booking_booking_service__["a" /* BookingService */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2_ngx_flash_messages__["b" /* FlashMessagesService */]])
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_3_ngx_flash_messages__["b" /* FlashMessagesService */]])
     ], DisplaySeatsComponent);
     return DisplaySeatsComponent;
 }());
