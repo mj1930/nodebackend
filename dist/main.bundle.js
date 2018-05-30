@@ -552,7 +552,7 @@ var environment = {
     config: {
         APP_NAME: "Angular Test App",
         // API_URL: "http://localhost:3000/",
-        API_URL: "http://13.126.73.79:3000/",
+        API_URL: "http://13.127.59.234:3000/",
     }
 };
 
