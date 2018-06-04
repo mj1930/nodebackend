@@ -418,7 +418,7 @@ var DisplaySeatsComponent = (function () {
         }
         else {
             if (this.reservedTicket) {
-                if (this.reservedTicket.length < this.nOfTickets) {
+                if (this.reservedTicket.length <= this.leftSeat) {
                     this.checkSeat(event);
                 }
                 else {
@@ -439,7 +439,7 @@ var DisplaySeatsComponent = (function () {
         var id = +event.target.id;
         var checked = event.target.checked;
         var nextCheck = id + 1;
-        var totalSeat = this.nOfTickets;
+        var totalSeat = this.leftSeat;
         var val = $('#' + nextCheck + ':checked').length;
         if (val > 0 && totalSeat >= 2) {
             alert('Please select seats 1 by 1');
@@ -449,10 +449,15 @@ var DisplaySeatsComponent = (function () {
         else {
             this.reservedTicket.push(id);
             for (var i = 0; i < this.leftSeat; i++) {
-                $("#" + nextCheck).prop('checked', checked);
-                this.reservedTicket.push(nextCheck);
-                nextCheck += 1;
-                this.leftSeat -= 1;
+                if (!this.checkStatus(nextCheck)) {
+                    $("#" + nextCheck).prop('checked', checked);
+                    this.reservedTicket.push(nextCheck);
+                    nextCheck += 1;
+                    this.leftSeat -= 1;
+                }
+                else {
+                    alert("Please select remaining " + this.leftSeat + " seats");
+                }
             }
         }
     };
@@ -460,7 +465,8 @@ var DisplaySeatsComponent = (function () {
         var id = +event.target.id;
         var emailForm = this.checkBoxArray.controls.checkBox;
         emailForm.push(new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */](id));
-        this.reservedTicket = emailForm.value;
+        this.reservedTicket.push(emailForm.value[0]);
+        this.leftSeat -= 1;
     };
     DisplaySeatsComponent.prototype.onClick = function () {
         var _this = this;
@@ -557,7 +563,7 @@ var environment = {
     config: {
         APP_NAME: "Angular Test App",
         // API_URL: "http://localhost:3000/",
-        API_URL: "http://13.127.59.234:3000/",
+        API_URL: "http://13.232.99.0:3000/",
     }
 };
 

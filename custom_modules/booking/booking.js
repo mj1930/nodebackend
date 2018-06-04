@@ -19,14 +19,23 @@ module.exports.saveBooking = function(req, res) {
                         seat: bookingVal,
                         reserved: true
                     }
-                    Booking(obj).save(
-                        obj
-                    , (err, resp) => {
+                    Booking.findOne({
+                        seat: obj.seat
+                    }, (err, resp) => {
                         if (err) {
-                            callback(err, null);
+                            callback(err, null)
                         }
                         else {
-                            callback(null, resp);
+                            Booking(obj).save(
+                                obj
+                            , (err, resp) => {
+                                if (err) {
+                                    callback(err, null);
+                                }
+                                else {
+                                    callback(null, resp);
+                                }
+                            })
                         }
                     })
                 }
